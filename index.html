@@ -22,18 +22,16 @@
     </form>
 
     <?php
-    // Only run this block if the form is submitted
     if (isset($_POST['submit']) || isset($_GET['submit'])) {
+        // Collect values safely
         $fname = htmlspecialchars($_REQUEST['fname']);
         $sname = htmlspecialchars($_REQUEST['sname']);
         $email = htmlspecialchars($_REQUEST['email']);
         $password = htmlspecialchars($_REQUEST['password']);
 
-        echo "<h3>Submitted Information:</h3>";
-        echo "First Name: " . $fname . "<br>";
-        echo "Second Name: " . $sname . "<br>";
-        echo "Email: " . $email . "<br>";
-        echo "Password: " . $password . "<br>";
+        // Show a clean confirmation message
+        echo "<h3>Form submitted successfully!</h3>";
+        echo "<p>Thank you, $fname $sname. Your registration has been received.</p>";
     }
     ?>
 </body>
