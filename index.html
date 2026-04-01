@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration Form</title>
+    <title>User Registration</title>
 </head>
 <body>
     <h2>User Registration</h2>
@@ -22,12 +22,14 @@
     </form>
 
     <?php
+    // Only run this block if the form is submitted
     if (isset($_POST['submit'])) {
         $fname = htmlspecialchars($_POST['fname']);
         $sname = htmlspecialchars($_POST['sname']);
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
 
+        // Show a clean confirmation message
         echo "<h3>Form submitted successfully!</h3>";
         echo "<p>Thank you, $fname $sname. Your registration has been received.</p>";
     }
