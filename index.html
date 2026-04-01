@@ -5,6 +5,7 @@
 </head>
 <body>
     <h2>User Registration</h2>
+    <!-- You can change method="post" to method="get" to test both -->
     <form method="post" action="">
         <label for="fname">First Name:</label><br>
         <input type="text" id="fname" name="fname" required><br><br>
@@ -22,11 +23,13 @@
     </form>
 
     <?php
-    if (isset($_POST['submit'])) {
-        $fname = htmlspecialchars($_POST['fname']);
-        $sname = htmlspecialchars($_POST['sname']);
-        $email = htmlspecialchars($_POST['email']);
-        $password = htmlspecialchars($_POST['password']);
+    // Check if form was submitted using POST or GET
+    if (isset($_POST['submit']) || isset($_GET['submit'])) {
+        // Use $_REQUEST to capture both POST and GET
+        $fname = htmlspecialchars($_REQUEST['fname']);
+        $sname = htmlspecialchars($_REQUEST['sname']);
+        $email = htmlspecialchars($_REQUEST['email']);
+        $password = htmlspecialchars($_REQUEST['password']);
 
         echo "<h3>Submitted Information:</h3>";
         echo "First Name: " . $fname . "<br>";
