@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>User Registration</h2>
+    <form method="post" action="">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" required><br><br>
+
+        <label for="sname">Second Name:</label><br>
+        <input type="text" id="sname" name="sname" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" name="submit" value="Register">
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        $fname = htmlspecialchars($_POST['fname']);
+        $sname = htmlspecialchars($_POST['sname']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
+
+        echo "<h3>Submitted Information:</h3>";
+        echo "First Name: " . $fname . "<br>";
+        echo "Second Name: " . $sname . "<br>";
+        echo "Email: " . $email . "<br>";
+        echo "Password: " . $password . "<br>";
+    }
+    ?>
+</body>
+</html>
